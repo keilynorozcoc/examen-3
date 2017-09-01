@@ -1,0 +1,17 @@
+{
+  "name": "examen-3",
+  "authors": [
+    "keilynorozcoc <korozcoc@ucenfotec.ac.cr>"
+  ],
+  "description": "",
+  "main": "public/index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
