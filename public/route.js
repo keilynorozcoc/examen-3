@@ -8,32 +8,32 @@
 
     function configuration($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('registro', {
-                url: '/registro',
-                templateUrl: './components/registro/registro.view.html',
-                css: './css/style.registro.css',
+            .state('hotel', {
+                url: '/hotel',
+                templateUrl: './components/hotel/hotel.view.html',
+                // css: './css/style.hotel.css',
                 resolve: {
                     load: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load('./components/registro/registro.controller.js')
+                        return $ocLazyLoad.load('./components/hotel/hotel.controller.js')
                     }]
                 },
-                controller: 'registroController',
+                controller: 'hotelController',
                 controllerAs: 'vm'
             })
-            .state('propiedad', {
-                url: '/propiedad',
-                templateUrl: './components/propiedad/propiedad.view.html',
-                // css: './css/style.propiedad.css',
+            .state('usuario', {
+                url: '/usuario',
+                templateUrl: './components/usuario/usuario.view.html',
+                // css: './css/style.usuario.css',
                 resolve: {
                     load: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load('./components/propiedad/propiedad.controller.js')
+                        return $ocLazyLoad.load('./components/usuario/usuario.controller.js')
                     }]
                 },
-                controller: 'propiedadController',
+                controller: 'usuarioController',
                 controllerAs: 'vm'
             })
 
-        $urlRouterProvider.otherwise('/registro');
+        $urlRouterProvider.otherwise('/');
     } //Cierre de la function configuration
 
 })();

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var propiedadController = require('./propiedad.controller.js');
+var hotelController = require('./hotel.controller.js');
 
 //para aquellas rutas que ocupen un id
 
@@ -9,19 +9,19 @@ router.param('id', function(req, res, next, id){
   next();
 });
 
-router.route('/save_propiedad')
+router.route('/save_hotel')
   .post(function(req,res){
-    propiedadController.save(req,res);
+    hotelController.save(req,res);
   });
 
-router.route('/get_all_propiedad')
+router.route('/get_all_hotel')
   .get(function(req,res){
-    propiedadController.findAll(req,res);
+    hotelController.findAll(req,res);
   });
 
 router.route('/get')
   .put(function(req,res){
-    propiedadController.findOne(req,res);
+    hotelController.findOne(req,res);
   });
 
 module.exports = router;

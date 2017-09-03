@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var jugadorController = require('./jugador.controller.js');
+var usuarioController = require('./usuario.controller.js');
 
 //para aquellas rutas que ocupen un id
 
@@ -9,19 +9,19 @@ router.param('id', function(req, res, next, id){
   next();
 });
 
-router.route('/save_jugador')
+router.route('/save_usuario')
   .post(function(req,res){
-    jugadorController.save(req,res);
+    usuarioController.save(req,res);
   });
 
-router.route('/get_all_jugador')
+router.route('/get_all_usuario')
   .get(function(req,res){
-    jugadorController.findAll(req,res);
+    usuarioController.findAll(req,res);
   });
 
 router.route('/get')
   .put(function(req,res){
-    jugadorController.findOne(req,res);
+    usuarioController.findOne(req,res);
   });
 
 module.exports = router;

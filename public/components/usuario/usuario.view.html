@@ -1,34 +1,28 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="localhost:8000">BuyMe</a>
+      <a class="navbar-brand" href="localhost:8000">Sistema​ ​para​ ​evaluación​ ​de​ ​hoteles</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
-        <input id="filter" class="form-control" type="search" name="nameFilter" ng-model="vm.buscarPropiedad" placeholder="Buscar">
+        <input id="filter" class="form-control" type="search" name="nameFilter" ng-model="vm.buscarUsuario" placeholder="Buscar">
         <!-- <input type="text" class="form-control" placeholder="Search..."> -->
       </form>    
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/#!/registro">Registro</a></li>
-        <li><a href="/#!/propiedad">Propiedades</a></li>
+        <li><a href="/#!/usuario">Usuarios</a></li>
+        <li><a href="/#!/hotel">Hoteles</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div ng-repeat="propiedad in vm.propiedades | filter:vm.buscarPropiedad " class="col-lg-4 col-md-4">
+<div ng-repeat="usuario in vm.usuario | filter:vm.buscarUsuario " class="col-lg-4 col-md-4">
     <div class="panel panel-primary">
     <div class="panel-heading">
       <div class="">
         <div class="">
           <span class="x-icon-headings-invert icon-x-order x-icon-headings"></span>
-          <h3 class="header-white header-smaller">{{propiedad.name}}</h3>
+          <h3 class="header-white header-smaller">{{usuario.name}}</h3>
         </div>
       </div>
     </div>
@@ -36,11 +30,11 @@
       <div class="panel-footer">
         <div class="row">
           <div class="col-md-5 col-lg-4 clearfix dashboard-leads-indicator">
-            <label type="text" name="posistion" id="posistion">Posición: {{propiedad.posistion}}</label>
+            <label type="text" name="posistion" id="posistion">Posición: {{usuario.posistion}}</label>
           </div>
           <div class="col-md-2 col-lg-4 clearfix dashboard-progress-bar">
             <div class="col-md-5 col-lg-4 clearfix dashboard-leads-indicator">
-            <label type="text" name="price" id="price">Precio:{{propiedad.price}}</label>
+            <label type="text" name="price" id="price">Precio:{{usuario.price}}</label>
             <!-- <button class="btn btn-info float-right btn-sm pull-right">Comprar</button> -->
             
           </div>
@@ -52,3 +46,4 @@
 
   </div>
 </div>
+

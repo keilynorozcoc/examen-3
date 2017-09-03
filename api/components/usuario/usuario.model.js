@@ -1,7 +1,7 @@
 //Requerimos mongoose
 var mongoose = require('mongoose');
 //Esquema de patrocinador
-var JugadorSchema = new mongoose.Schema({
+var UsuarioSchema = new mongoose.Schema({
   codigo : {type: String, required: false},
   nombre : {type: String, required: false},
   alias : {type: String, required: false},
@@ -10,5 +10,5 @@ var JugadorSchema = new mongoose.Schema({
   archivo: String
 });
 
-module.exports = mongoose.model('jugadores', JugadorSchema); //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
+module.exports = mongoose.model('usuarios', UsuarioSchema); //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
 //User va en mayúscula y singular aunque en la bd todo se pone en minúscula y plural

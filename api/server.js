@@ -8,7 +8,7 @@ var express = require('express'),
 
 // Se establece una conexión con mongoose por medio de las siguientes variables
 var db = mongoose.connection,
-    dburl = 'mongodb://admin:vistadesdeelmasalla123@ds161713.mlab.com:61713/examen2proyectoweb',
+    dburl = 'mongodb://admin:vistadesdeelmasalla123@ds161713.mlab.com:61713/examen-3',
     port = 3000;
 // se le indica al servidor la tarea a ejecutar
 var server = app.listen(port,_server());
@@ -47,15 +47,13 @@ app.use( function(req, res, next){
 
 // Se definen las rutas que van estar ligadas a toda la funcionalidad de la aplicacion
 var index = require('./index');
-    jugadorRoutes = require('./components/jugador/jugador.route.js'),
-    propiedadRoutes = require('./components/propiedad/propiedad.route.js');
-
-
+    usuariosRoutes = require('./components/usuario/usuario.route.js'),
+    hotelesRoutes = require('./components/hotel/hotel.route.js');
 
 // Se definen las rutas de los servicios con las que se conecta el front-end
 
-app.use('/api', jugadorRoutes);
-app.use('/api', propiedadRoutes);
+app.use('/api', usuariosRoutes);
+app.use('/api', hotelesRoutes);
 
 app.use('/', index);
 // Se guarda todo lo que se ha realizado
