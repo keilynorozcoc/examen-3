@@ -1,5 +1,5 @@
 (function() {
   angular
-    .module('myApp', ['appRoutes','ngFileUpload'])
+    .module('myApp', ['appRoutes','ngFileUpload','ngMap'])
 
 })();

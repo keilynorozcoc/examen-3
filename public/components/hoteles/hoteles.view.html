@@ -3,20 +3,25 @@
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
       <div class="row page-header">
-        <div class="col-md-4">
-                 
-          
+        <div class="col-md-4">  
           <h1>Hoteles</h1>
         </div>
         <div class="col-md-4">
 
 
-          <button type="button" class="btn btn-warning" ng-if="vm.session.rol == 'admin'" ng-click="vm.nuevoHotel = !vm.nuevoHotel; vm.hotel= {}">Agregar hotel</button>
-        </div>         
+          <button type="button" class="btn btn-warning" ng-if="vm.session.rol == 'admin'" ng-click="vm.nuevoHotel = !vm.nuevoHotel; vm.hotel= {}">Agregar hotel</button>         
+
+        </div>
+
+        <div class="col-md-4">
+        <!-- <label for="">Buscar</label> -->
+          <input type="text" class="form-control" placeholder="Buscar" ng-model="vm.buscar" style="margin-top: 25px">
+        </div>
+
       </div>
     
-        <div ng-repeat="hotel in vm.hoteles" class="col-sm-6 col-md-4 col-lg-3">
-          <a href="/principal/hotel?id={{hotel._id}}" ng-click="console.log('hola')">
+        <div ng-repeat="hotel in vm.hoteles | filter:vm.buscar" class="col-sm-6 col-md-4 col-lg-3">
+          <a href="/#!/principal/hotel?id={{hotel._id}}" ng-click="console.log('hola')">
             <div class="row placeholders">
             <div class="col-xs-12 placeholder">
               <img ng-src="{{hotel.imagen}}" alt="Description" class="profile-avatar" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"/>

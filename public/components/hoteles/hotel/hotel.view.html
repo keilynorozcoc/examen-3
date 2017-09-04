@@ -1,3 +1,37 @@
-{{vm.hotel}}
+<h1>{{vm.hotel.nombre}}</h1>
 
-<img src="{{hotel.imagen}}" alt="">
+
+<div class="row">
+	<div class="col-md-4">
+		<img src="{{vm.hotel.imagen}}" style="max-width: 100%" alt="">
+	</div>
+
+	<div class="col-md-8">
+		<ng-map zoom="17" center=[{{vm.hotel.coordenadas.lat}},{{vm.hotel.coordenadas.lng}}]>
+		  <marker ng-show="vm.googlePlace" position="{{vm.hotel.coordenadas.lat}},{{vm.hotel.coordenadas.lng}}" ></marker>
+		</ng-map>
+
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+{{vm.hotel.coordenadas.lat}},{{vm.hotel.coordenadas.lng}}
+
+  <div ng-show="vm.googlePlace">
+    Direccion: {{vm.googlePlace.formatted_address}} <br/>
+    Coordenadas: {{vm.googlePlace.geometry.location}}<br/>
+  </div>
+<!-- 
+  https://www.google.com/maps/place/Wyndham+San+Jos%C3%A9+Herradura+Hotel+%26+Convention+Center/@9.9789806,-84.1591352,15.75z/data=!4m12!1m6!3m5!1s0x0:0xbc6c5397d1f87499!2sWyndham+San+Jos%C3%A9+Herradura+Hotel+%26+Convention+Center!8m2!3d9.9788716!4d-84.1612595!3m4!1s0x0:0xbc6c5397d1f87499!8m2!3d9.9788716!4d-84.1612595?hl=es-ES
+
+
+  9.9788716!4d-84.1612595
+
+  9.9788716,-84.1612595 -->

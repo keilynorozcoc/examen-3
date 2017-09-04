@@ -3,9 +3,9 @@
   angular
     .module('myApp')
     .controller('hotelController', hotelController);
-    hotelController.$inject = ['$http','$stateParams','$location','hotelService','Upload','ImageService','lugaresService','SessionService'];
+    hotelController.$inject = ['$http','$stateParams','$location','hotelService','Upload','ImageService','lugaresService','SessionService','NgMap'];
 
-    function hotelController($http,$stateParams,$location,hotelService,Upload,ImageService,lugaresService,SessionService){
+    function hotelController($http,$stateParams,$location,hotelService,Upload,ImageService,lugaresService,SessionService,NgMap){
 
 
 
