@@ -10,7 +10,8 @@ module.exports.save = function(req, res){
     telefono : req.body.telefono,
     correo : req.body.correo,
     imagen : req.body.imagen,
-    evaluaciones: []
+    evaluaciones: [],
+    calificacion:"0"
   });
 
   nuevoHotel.save(function(err){

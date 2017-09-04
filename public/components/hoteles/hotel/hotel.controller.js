@@ -70,6 +70,7 @@
 
       vm.calificacion = {};
       $("#advanced").modal('hide');
+      $location.path('/principal/hoteles')
     }
    }
 })();

@@ -75,6 +75,7 @@
       hotelService.setHotel(vm.hotel);
       vm.hotel = {};
       document.getElementById("imagen").files[0] = null;
+      vm.nuevoHotel = false;
       init();
     }
 
