@@ -9,7 +9,8 @@ module.exports.save = function(req, res){
     direccion : req.body.direccion,
     telefono : req.body.telefono,
     correo : req.body.correo,
-    imagen : req.body.imagen
+    imagen : req.body.imagen,
+    evaluaciones: []
   });
 
   nuevoHotel.save(function(err){
@@ -31,5 +32,20 @@ module.exports.findOne = function(req,res){
     res.send(hoteles);
   })
 };
+
+module.exports.update = function(req,res){
+  Hotel.update({_id: req.body._id}, req.body).then(function(response){
+    res.send(response);
+  })
+};
+
+
+
+
+
+
+
+
+
 
 

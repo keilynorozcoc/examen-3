@@ -8,7 +8,6 @@
         </div>
         <div class="col-md-4">
 
-
           <button type="button" class="btn btn-warning" ng-if="vm.session.rol == 'admin'" ng-click="vm.nuevoHotel = !vm.nuevoHotel; vm.hotel= {}">Agregar hotel</button>         
 
         </div>
@@ -26,6 +25,11 @@
             <div class="col-xs-12 placeholder">
               <img ng-src="{{hotel.imagen}}" alt="Description" class="profile-avatar" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"/>
               <h4>{{hotel.nombre}}</h4>
+
+                <span class="stars" style="display: inline-block;" >
+                  <span ng-style="{ 'width': vm.getStars(hotel.calificacion)}"></span>
+                </span> 
+                <span class="review-no">( {{hotel.calificacion}} )</span> </br>
               <!-- <span class="text-muted">Lat: {{hotel.coordenadas.lat}} Long: {{hotel.coordenadas.lng}}</span> -->
               <!-- <span class="text-muted"></span> -->
               <!-- <span class="text-muted">Provincia: {{hotel.lugar.provincia}} Distrito: {{hotel.lugar.distrito}} Cantón: {{hotel.lugar.canton}} </span> -->

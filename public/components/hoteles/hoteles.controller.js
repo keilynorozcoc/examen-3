@@ -43,7 +43,13 @@
     }
 
     init();
-
+    vm.getStars = function(rating) {
+      // Get the value
+      var val = parseFloat(rating);
+      // Turn value into number/100
+      var size = val/5*100;
+      return size + '%';
+    }
     vm.presave= function(update) {
       vm.cloudObj.data.file =document.getElementById("imagen").files[0];
 

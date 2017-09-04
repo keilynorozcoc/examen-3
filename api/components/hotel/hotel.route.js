@@ -24,4 +24,9 @@ router.route('/get_hotel')
     hotelController.findOne(req,res);
   });
 
+router.route('/edit_hotel')
+.put(function(req,res){
+  hotelController.update(req,res);
+});
+
 module.exports = router;

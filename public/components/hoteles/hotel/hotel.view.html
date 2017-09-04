@@ -21,7 +21,7 @@
 				<h3 class="product-title">{{vm.hotel.nombre}}</h3>
 				<div class="rating">
 					<!-- <rating read-only="true" ng-model="vm.hotel.calificacion"></rating> -->
-					<a href="" data-toggle="modal" ng-click="vm.modalCaliicacion()">
+					<a href="" data-toggle="modal" ng-click="vm.modalCalificacion()">
 						<span class="stars">
 				          <span ng-style="{ 'width': vm.getStars(vm.hotel.calificacion) }"></span>
 				        </span>										
@@ -36,12 +36,12 @@
 				</h5>
 				<h5 class="colors">Reservaciones:</h5>
 				<span class="glyphicon glyphicon-earphone" aria-hidden=""></span>
-				<span>{{vm.hotel.telefono.reservaciones}}</span>
+				<span>{{vm.hotel.telefono.reservaciones}}</span> </br>
 				<span class="glyphicon glyphicon-envelope" aria-hidden=""></span>
 				<span>{{vm.hotel.correo.reservaciones}}</span>
 				<h5 class="colors">Servicio Cliente:</h5>
 				<span class="glyphicon glyphicon-earphone" aria-hidden=""></span>
-				<span>{{vm.hotel.telefono.servicioCliente}}</span>
+				<span>{{vm.hotel.telefono.servicioCliente}}</span> </br>
 				<span class="glyphicon glyphicon-envelope" aria-hidden=""></span>
 				<span>{{vm.hotel.correo.servicioCliente}}</span>
 				
@@ -50,10 +50,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- Modal -->
-<!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="advanced" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -108,7 +104,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-warning" ng-model="vm.salvarCalificacion">Salvar</button>
+        <button type="button" class="btn btn-warning" ng-click="vm.salvarCalificacion()">Salvar</button>
       </div>
     </div>
   </div>

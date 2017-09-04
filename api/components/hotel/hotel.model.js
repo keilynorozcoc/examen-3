@@ -21,8 +21,13 @@ var HotelSchema = new mongoose.Schema({
   	reservaciones :{type: String, required: false},
     servicioCliente: String
   },
-  imagen :{type: String, required: false}
-
+  imagen :{type: String, required: false},
+  calificacion:String,
+  evaluaciones : [
+    {
+      promedio : String
+    }
+  ]
 });
 
 module.exports = mongoose.model('hoteles', HotelSchema); //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
