@@ -1,3 +1,14 @@
 body{
 	padding-top: 60px;
 }
+.modal-body .row{
+	margin-left: 20px;
+	margin-bottom: 2%;
+}
+.modal-body.container{
+	max-width: 100%;
+}
+.modal-body .row label{
+  float: right;
+}
+  
