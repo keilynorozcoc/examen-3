@@ -22,10 +22,10 @@
 				<div class="rating">
 					<!-- <rating read-only="true" ng-model="vm.hotel.calificacion"></rating> -->
 					<a href="" data-toggle="modal" ng-click="vm.modalCalificacion()">
-						<span class="stars">
+						<span class="stars" style="display: inline-block;">
 				          <span ng-style="{ 'width': vm.getStars(vm.hotel.calificacion) }"></span>
 				        </span>										
-						<span class="review-no">( {{vm.hotel.calificacion}} )</span>			        
+						<span class="review-no">( {{vm.hotel.calificacion}} | {{vm.hotel.evaluaciones.length}} votos)</span>			        
 					</a>
 				</div>
 				<p class="product-description">{{vm.hotel.direccion}}</p>
