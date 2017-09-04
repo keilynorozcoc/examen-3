@@ -2,12 +2,11 @@
 var mongoose = require('mongoose');
 //Esquema de patrocinador
 var UsuarioSchema = new mongoose.Schema({
-  codigo : {type: String, required: false},
   nombre : {type: String, required: false},
-  alias : {type: String, required: false},
-  cantDinero : {type: String, required: false},
-  foto : {type: String, required: false},
-  archivo: String
+  usuario : {type: String, required: false},
+  correo: String,
+  contrasenna: String,
+  rol : String
 });
 
 module.exports = mongoose.model('usuarios', UsuarioSchema); //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose

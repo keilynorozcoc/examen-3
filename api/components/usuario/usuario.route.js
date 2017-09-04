@@ -19,7 +19,7 @@ router.route('/get_all_usuario')
     usuarioController.findAll(req,res);
   });
 
-router.route('/get')
+router.route('/get_usuario')
   .put(function(req,res){
     usuarioController.findOne(req,res);
   });

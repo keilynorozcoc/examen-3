@@ -2,24 +2,33 @@
     'use strict';
     angular
     .module('myApp')
-    .controller('principalController', principalController);
+    .controller('loginController', loginController);
 
-    principalController.$inject = ['SessionService','$location'];
+    loginController.$inject = ['$location','usuarioService','SessionService' ];
 
-    function principalController(SessionService,$location){
-
-      if (SessionService.session() == null && $location.path() != '/principal/login') {
-        $location.path('/principal/login');
-      }
+    function loginController($location,usuarioService,SessionService){
 
       var vm = this;
 
+      vm.login = function () {
+
+        usuarioService.getUsuario({"correo":vm.usuario.correo}).then(function (response) {
 
 
-      vm.salir= function () {
-        SessionService.destroy();
-        $location.path('/principal/login')
+          var data = response.data;
+
+          if (data.contrasenna == vm.usuario.contrasenna && data.correo == vm.usuario.correo) {
+
+            SessionService.create(data);   
+            
+            $location.path('/principal/hoteles');   
+          }          
+        });    
+
+
+        
       }
+
       // vm.user = {};
       /*Valida que los datos sean correctos*/
       // vm.login = function(credentials){

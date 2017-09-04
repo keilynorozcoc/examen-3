@@ -19,7 +19,7 @@ router.route('/get_all_hotel')
     hotelController.findAll(req,res);
   });
 
-router.route('/get')
+router.route('/get_hotel')
   .put(function(req,res){
     hotelController.findOne(req,res);
   });

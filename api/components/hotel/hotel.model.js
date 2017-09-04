@@ -2,16 +2,17 @@
 var mongoose = require('mongoose');
 //Esquema de patrocinador
 var HotelSchema = new mongoose.Schema({
-
   nombre : {type: String, required: false},
-  provincia : {type: String, required: false},
-  canton : {type: String, required: false},
-  distrito :{type: String, required: false},
-  direccion :{type: String, required: false},
   coordenadas :{
     lat:String,
     lng:String
   },
+  lugar : {    
+    provincia : String,
+    canton: String,
+    distrito: String
+  },
+  direccion :{type: String, required: false},
   telefono : {    
     reservaciones : String,
     servicioCliente: String
@@ -19,7 +20,8 @@ var HotelSchema = new mongoose.Schema({
   correo : {
   	reservaciones :{type: String, required: false},
     servicioCliente: String
-  }
+  },
+  imagen :{type: String, required: false}
 
 });
 

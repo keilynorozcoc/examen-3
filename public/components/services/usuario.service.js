@@ -3,6 +3,7 @@
   angular
   .module('myApp')
   .service('usuarioService', usuarioService);
+  
   usuarioService.$inject = ['$http'];
 
 function usuarioService($http) {
@@ -24,7 +25,7 @@ function usuarioService($http) {
   }
 
   function _getUsuario(uniqueId){
-     return $http.get('http://localhost:3000/api/get_usuario',uniqueId);
+     return $http.put('http://localhost:3000/api/get_usuario',uniqueId);
   }
   
   function _updateUsuario(pUsuarioMod){

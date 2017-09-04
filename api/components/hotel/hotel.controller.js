@@ -5,12 +5,11 @@ module.exports.save = function(req, res){
   var nuevoHotel = new Hotel({
     nombre : req.body.nombre,
     coordenadas: req.body.coordenadas,
-    provincia : req.body.provincia,
-    canton : req.body.canton,
-    distrito: req.body.distrito,
+    lugar : req.body.lugar,
     direccion : req.body.direccion,
     telefono : req.body.telefono,
-    correo : req.body.correo
+    correo : req.body.correo,
+    imagen : req.body.imagen
   });
 
   nuevoHotel.save(function(err){
@@ -28,7 +27,7 @@ module.exports.findAll = function(req,res){
 };
 
 module.exports.findOne = function(req,res){
-  Hotel.find().then(function(hoteles){
+  Hotel.findOne(req.body).then(function(hoteles){
     res.send(hoteles);
   })
 };

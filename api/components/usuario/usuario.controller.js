@@ -3,12 +3,11 @@ var Usuario = require('./usuario.model.js');
 
 module.exports.save = function(req, res){
   var nuevoUsuario = new Usuario({
-    codigo : req.body.codigo,
+    usuario : req.body.usuario,
     nombre : req.body.nombre,
-    alias : req.body.alias,
-    cantDinero : req.body.cantDinero,
-    foto : req.body.foto,
-    archivo: req.body.archivo
+    contrasenna : req.body.contrasenna,
+    correo : req.body.correo,
+    rol : req.body.rol
   });
 
   nuevoUsuario.save(function(err){
@@ -26,7 +25,7 @@ module.exports.findAll = function(req,res){
 };
 
 module.exports.findOne = function(req,res){
-  Usuario.find().then(function(usuarios){
+  Usuario.findOne(req.body).then(function(usuarios){
     res.send(usuarios);
   })
 };

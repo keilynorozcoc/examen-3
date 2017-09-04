@@ -1,22 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="localhost:8000">Sistema​ ​para​ ​evaluación​ ​de​ ​hoteles</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right">
-        <input id="filter" class="form-control" type="search" name="nameFilter" ng-model="vm.buscarUsuario" placeholder="Buscar">
-        <!-- <input type="text" class="form-control" placeholder="Search..."> -->
-      </form>    
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/#!/usuario">Usuarios</a></li>
-        <li><a href="/#!/hotel">Hoteles</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div ng-repeat="usuario in vm.usuario | filter:vm.buscarUsuario " class="col-lg-4 col-md-4">
+<div ng-repeat="usuario in vm.usuario" class="col-lg-4 col-md-4">
     <div class="panel panel-primary">
     <div class="panel-heading">
       <div class="">
