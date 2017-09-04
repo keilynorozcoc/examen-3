@@ -14,6 +14,8 @@
     }
     var vm = this;
 
+    vm.nuevoHotel = false;
+
     vm.session = SessionService.session();
 
     vm.hoteles = {};

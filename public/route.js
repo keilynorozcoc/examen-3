@@ -48,7 +48,7 @@
             .state('principal.hotel', {
                 url: '/hotel?id',
                 templateUrl: './components/hoteles/hotel/hotel.view.html',
-                // css: './css/style.hotel.css',
+                css: './css/style.hotel.css',
                 resolve: {
                     load: ['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load('./components/hoteles/hotel/hotel.controller.js')
